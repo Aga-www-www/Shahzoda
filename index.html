@@ -20,12 +20,12 @@ body{
 
 min-height:100vh;
 
-font-family:"Georgia",serif;
+font-family:Georgia,serif;
 
 background:
 linear-gradient(
-rgba(0,0,0,0.75),
-rgba(0,0,0,0.85)
+rgba(0,0,0,.75),
+rgba(0,0,0,.9)
 ),
 url("https://images.unsplash.com/photo-1512820790803-83ca734da790?auto=format&fit=crop&w=1600&q=80");
 
@@ -41,7 +41,7 @@ overflow-x:hidden;
 
 
 
-/* yuraklar */
+/* hearts */
 
 .heart{
 
@@ -49,19 +49,19 @@ position:fixed;
 
 bottom:-50px;
 
-font-size:25px;
+font-size:28px;
 
-animation:heartMove 10s linear infinite;
+animation:heart 12s linear infinite;
 
-opacity:.7;
+opacity:.8;
 
 }
 
 
-@keyframes heartMove{
+@keyframes heart{
 
 0%{
-transform:translateY(0);
+transform:translateY(0) scale(.5);
 opacity:0;
 }
 
@@ -71,7 +71,7 @@ opacity:1;
 
 100%{
 
-transform:translateY(-110vh);
+transform:translateY(-120vh) scale(1.5);
 
 opacity:0;
 
@@ -85,13 +85,11 @@ opacity:0;
 
 .container{
 
-width:100%;
-
 max-width:900px;
 
 margin:auto;
 
-padding:50px 20px;
+padding:60px 20px;
 
 }
 
@@ -100,39 +98,33 @@ padding:50px 20px;
 
 .card{
 
-background:
+background:rgba(255,255,255,.13);
 
-rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,.25);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
--webkit-backdrop-filter:blur(18px);
+border-radius:40px;
 
-border:1px solid rgba(255,255,255,0.2);
-
-border-radius:35px;
-
-padding:50px;
+padding:55px;
 
 box-shadow:
+0 30px 100px rgba(0,0,0,.7);
 
-0 25px 80px rgba(0,0,0,.6);
-
-
-animation:appear 1.5s ease;
+animation:show 1.5s ease;
 
 
 }
 
 
 
-@keyframes appear{
+@keyframes show{
 
 from{
 
 opacity:0;
 
-transform:translateY(50px);
+transform:translateY(80px);
 
 }
 
@@ -151,57 +143,44 @@ transform:translateY(0);
 
 h1{
 
-
 text-align:center;
 
-font-size:65px;
+font-size:70px;
 
-letter-spacing:12px;
+letter-spacing:15px;
 
 color:#f5d77a;
 
-
 text-shadow:
+0 0 30px #f5d77a;
 
-0 0 20px #f5d77a;
-
-
-margin-bottom:40px;
-
+margin-bottom:45px;
 
 }
-
 
 
 
 h2{
 
-
 text-align:center;
 
-font-size:32px;
+font-size:38px;
 
 color:#f5d77a;
 
-margin:40px 0 25px;
-
+margin-bottom:35px;
 
 }
 
 
 
-
 p{
 
-
-font-size:21px;
+font-size:22px;
 
 line-height:2;
 
-color:#f8f8f8;
-
-margin-bottom:25px;
-
+text-align:center;
 
 }
 
@@ -210,18 +189,19 @@ margin-bottom:25px;
 
 button{
 
-
 display:block;
 
-margin:40px auto 0;
+margin:45px auto 0;
 
-
-padding:16px 55px;
-
+padding:18px 65px;
 
 border:none;
 
 border-radius:50px;
+
+font-size:21px;
+
+cursor:pointer;
 
 
 background:
@@ -229,18 +209,11 @@ background:
 linear-gradient(
 45deg,
 #f5d77a,
-#b88920
+#c28b20
 );
 
 
-font-size:20px;
-
-
-cursor:pointer;
-
-
-transition:.4s;
-
+transition:.5s;
 
 }
 
@@ -248,45 +221,74 @@ transition:.4s;
 
 button:hover{
 
-
-transform:scale(1.1);
-
+transform:scale(1.12);
 
 box-shadow:
-
-0 0 40px #f5d77a;
-
+0 0 50px #f5d77a;
 
 }
 
 
 
 
-
-#meaning{
+#letter{
 
 display:none;
 
+animation:open 2s ease;
+
 }
 
+
+
+@keyframes open{
+
+from{
+
+opacity:0;
+
+transform:scale(.8) rotateX(20deg);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
 
 
 
 
 .quote{
 
-text-align:center;
+margin:45px 0;
 
-font-size:25px;
+font-size:28px;
 
 font-style:italic;
 
 color:#f5d77a;
 
-margin:40px 0;
+}
 
+
+
+
+.line{
+
+height:1px;
+
+background:rgba(255,255,255,.3);
+
+margin:35px 0;
 
 }
+
 
 
 
@@ -295,16 +297,15 @@ margin:40px 0;
 
 .card{
 
-padding:25px;
+padding:30px;
 
 }
-
 
 h1{
 
 font-size:40px;
 
-letter-spacing:5px;
+letter-spacing:7px;
 
 }
 
@@ -316,15 +317,7 @@ font-size:17px;
 }
 
 
-h2{
-
-font-size:25px;
-
 }
-
-
-}
-
 
 </style>
 
@@ -335,9 +328,10 @@ font-size:25px;
 
 
 <div class="heart">❤️</div>
-<div class="heart" style="left:20%;animation-delay:2s">🤍</div>
-<div class="heart" style="left:70%;animation-delay:5s">❤️</div>
-<div class="heart" style="left:90%;animation-delay:7s">🤍</div>
+<div class="heart" style="left:20%;animation-delay:3s">🤍</div>
+<div class="heart" style="left:50%;animation-delay:5s">❤️</div>
+<div class="heart" style="left:80%;animation-delay:7s">🤍</div>
+
 
 
 <div class="container">
@@ -345,13 +339,13 @@ font-size:25px;
 <div class="card">
 
 
-<div id="intro">
+<div id="home">
 
 
 <h1>TAAMMUL</h1>
 
 
-<p style="text-align:center">
+<p>
 
 Don't rush...<br><br>
 
@@ -362,11 +356,12 @@ Calm your breathing.<br>
 Collect your thoughts.<br><br>
 
 
-Try to read every line not only with your eyes,
+Read every line not only with your eyes,
+
 but with your heart.
 
-
 </p>
+
 
 
 <button onclick="openLetter()">
@@ -377,3 +372,108 @@ I am ready
 
 
 </div>
+
+
+
+
+
+<div id="letter">
+
+
+<h2>A Message For You</h2>
+
+
+<div class="line"></div>
+
+
+<p>
+
+Before reading this...
+
+take a quiet moment for yourself.
+
+<br><br>
+
+
+Some words are not created only to be read.
+
+They are created to be felt.
+
+<br><br>
+
+
+Every memory,
+
+every feeling,
+
+and every person who touches our heart
+
+becomes a small part of our story.
+
+<br><br>
+
+
+Never forget:
+
+the most beautiful things in life
+
+are invisible to the eyes.
+
+They are understood by the heart.
+
+</p>
+
+
+
+<div class="quote">
+
+"Read with your heart, not only with your eyes."
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+<p>
+
+Thank you for being here 🤍
+
+<br>
+
+— Taammul
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+
+function openLetter(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
