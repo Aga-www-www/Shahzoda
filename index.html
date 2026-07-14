@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,169 +10,318 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
+
 body{
-    min-height:100vh;
-    font-family:"Georgia",serif;
-    color:white;
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-    url("https://images.unsplash.com/photo-1512820790803-83ca734da790?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
+
+min-height:100vh;
+
+font-family:"Georgia",serif;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.75),
+rgba(0,0,0,0.85)
+),
+url("https://images.unsplash.com/photo-1512820790803-83ca734da790?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+
+overflow-x:hidden;
+
 }
+
+
+
+/* yuraklar */
+
+.heart{
+
+position:fixed;
+
+bottom:-50px;
+
+font-size:25px;
+
+animation:heartMove 10s linear infinite;
+
+opacity:.7;
+
+}
+
+
+@keyframes heartMove{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+30%{
+opacity:1;
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
 
 
 .container{
-    max-width:850px;
-    margin:auto;
-    padding:40px 20px;
+
+width:100%;
+
+max-width:900px;
+
+margin:auto;
+
+padding:50px 20px;
+
 }
+
+
 
 
 .card{
 
-    background:rgba(255,255,255,0.10);
-    backdrop-filter:blur(18px);
-    border-radius:30px;
-    padding:45px;
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.5);
+background:
 
-    animation:show 1.5s ease;
+rgba(255,255,255,0.12);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+border-radius:35px;
+
+padding:50px;
+
+box-shadow:
+
+0 25px 80px rgba(0,0,0,.6);
+
+
+animation:appear 1.5s ease;
+
+
 }
 
 
-@keyframes show{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+h1{
+
+
+text-align:center;
+
+font-size:65px;
+
+letter-spacing:12px;
+
+color:#f5d77a;
+
+
+text-shadow:
+
+0 0 20px #f5d77a;
+
+
+margin-bottom:40px;
+
+
+}
+
+
+
+
+h2{
+
+
+text-align:center;
+
+font-size:32px;
+
+color:#f5d77a;
+
+margin:40px 0 25px;
+
+
+}
+
+
+
+
+p{
+
+
+font-size:21px;
+
+line-height:2;
+
+color:#f8f8f8;
+
+margin-bottom:25px;
+
+
+}
+
+
+
+
+button{
+
+
+display:block;
+
+margin:40px auto 0;
+
+
+padding:16px 55px;
+
+
+border:none;
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(
+45deg,
+#f5d77a,
+#b88920
+);
+
+
+font-size:20px;
+
+
+cursor:pointer;
+
+
+transition:.4s;
+
+
+}
+
+
+
+button:hover{
+
+
+transform:scale(1.1);
+
+
+box-shadow:
+
+0 0 40px #f5d77a;
+
+
+}
+
+
+
+
+
+#meaning{
+
+display:none;
+
+}
+
+
+
+
+
+.quote{
+
+text-align:center;
+
+font-size:25px;
+
+font-style:italic;
+
+color:#f5d77a;
+
+margin:40px 0;
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+.card{
+
+padding:25px;
+
 }
 
 
 h1{
 
-    text-align:center;
-    font-size:55px;
-    letter-spacing:8px;
-    color:#f7d774;
-    text-shadow:0 0 20px #f7d774;
+font-size:40px;
+
+letter-spacing:5px;
+
+}
+
+
+p{
+
+font-size:17px;
 
 }
 
 
 h2{
 
-    text-align:center;
-    color:#f7d774;
-    margin:35px 0 20px;
-}
-
-
-p{
-
-    font-size:20px;
-    line-height:2;
-    color:#f5f5f5;
-    margin-bottom:20px;
+font-size:25px;
 
 }
 
-
-button{
-
-    display:block;
-    margin:35px auto 0;
-
-    padding:15px 45px;
-
-    border:none;
-    border-radius:50px;
-
-    background:
-    linear-gradient(45deg,#f7d774,#dba93b);
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.4s;
-
-}
-
-
-button:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:
-    0 0 30px #f7d774;
-
-}
-
-
-#meaning{
-
-    display:none;
-
-}
-
-
-.quote{
-
-    text-align:center;
-    font-size:24px;
-    color:#f7d774;
-    margin:35px 0;
-
-}
-
-
-.heart{
-
-    position:fixed;
-    bottom:-20px;
-    font-size:25px;
-    animation:float 8s linear infinite;
-    opacity:.6;
-}
-
-
-@keyframes float{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-110vh);
-    }
-
-}
-
-
-@media(max-width:600px){
-
-.card{
-padding:25px;
-}
-
-h1{
-font-size:40px;
-}
-
-p{
-font-size:17px;
-}
 
 }
 
@@ -185,9 +335,9 @@ font-size:17px;
 
 
 <div class="heart">❤️</div>
-<div class="heart" style="left:80%;animation-delay:2s">🤍</div>
-<div class="heart" style="left:20%;animation-delay:4s">❤️</div>
-
+<div class="heart" style="left:20%;animation-delay:2s">🤍</div>
+<div class="heart" style="left:70%;animation-delay:5s">❤️</div>
+<div class="heart" style="left:90%;animation-delay:7s">🤍</div>
 
 
 <div class="container">
@@ -201,154 +351,29 @@ font-size:17px;
 <h1>TAAMMUL</h1>
 
 
-<p style="text-align:center;margin-top:35px">
+<p style="text-align:center">
 
 Don't rush...<br><br>
 
-Take a moment to be alone with yourself.<br>
+Take a few moments to be alone with yourself.<br>
 
 Calm your breathing.<br>
 
 Collect your thoughts.<br><br>
 
-Read every line not only with your eyes,<br>
+
+Try to read every line not only with your eyes,
 but with your heart.
+
 
 </p>
 
 
-<button onclick="openPage()">
+<button onclick="openLetter()">
+
 I am ready
+
 </button>
 
 
 </div>
-
-
-
-<div id="meaning">
-
-
-<h2>🕊 First of all...</h2>
-
-
-<p>
-If I have ever hurt you or made you feel bad,
-I sincerely apologize.
-</p>
-
-
-<p>
-Thank you for coming this far.
-Maybe you are wondering:
-<b>"Why all of this?"</b>
-</p>
-
-
-<p>
-The truth is, I had two ways to reach you.
-One was with honesty and kindness.
-The other was trying to get your attention in the wrong way.
-</p>
-
-
-<p>
-Unfortunately, I chose the second one.
-But now I understand something important:
-attention cannot be forced.
-It is earned through respect, patience and sincerity.
-</p>
-
-
-<p>
-If my actions hurt you,
-I have no excuses.
-I can only say:
-I am truly sorry.
-</p>
-
-
-<p class="quote">
-
-"Forgiveness is not an obligation,
-but asking for forgiveness is my responsibility."
-
-</p>
-
-
-
-<h2>📖 One small request...</h2>
-
-
-<p>
-Please read the book I gave you slowly.
-I did not choose it by accident.
-</p>
-
-
-<p>
-The lines I marked inside it have meaning.
-Sometimes a book can say the words
-that we cannot express ourselves.
-</p>
-
-
-<p>
-So please don't just read those pages.
-Reflect on them.
-</p>
-
-
-<h2>
-Taammul.
-</h2>
-
-
-<p>
-Maybe those words will tell you
-what I could not say.
-Maybe you will understand
-not only my words,
-but also my silence.
-</p>
-
-
-<p>
-I will be waiting for you
-to read those marked pages.
-</p>
-
-
-<p style="text-align:center">
-Thank you. 🤍
-</p>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<script>
-
-function openPage(){
-
-document.getElementById("intro").style.display="none";
-
-document.getElementById("meaning").style.display="block";
-
-window.scrollTo(0,0);
-
-}
-
-
-</script>
-
-
-</body>
-</html>
-<!-- update -->
