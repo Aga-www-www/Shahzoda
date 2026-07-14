@@ -1,80 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taammul</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Georgia",serif;
+    color:white;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1512820790803-83ca734da790?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+
+.card{
+
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(18px);
+    border-radius:30px;
+    padding:45px;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.5);
+
+    animation:show 1.5s ease;
+}
+
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+h1{
+
+    text-align:center;
+    font-size:55px;
+    letter-spacing:8px;
+    color:#f7d774;
+    text-shadow:0 0 20px #f7d774;
+
+}
+
+
+h2{
+
+    text-align:center;
+    color:#f7d774;
+    margin:35px 0 20px;
+}
+
+
+p{
+
+    font-size:20px;
+    line-height:2;
+    color:#f5f5f5;
+    margin-bottom:20px;
+
+}
+
+
+button{
+
+    display:block;
+    margin:35px auto 0;
+
+    padding:15px 45px;
+
+    border:none;
+    border-radius:50px;
+
+    background:
+    linear-gradient(45deg,#f7d774,#dba93b);
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 30px #f7d774;
+
+}
+
+
+#meaning{
+
+    display:none;
+
+}
+
+
+.quote{
+
+    text-align:center;
+    font-size:24px;
+    color:#f7d774;
+    margin:35px 0;
+
+}
+
+
+.heart{
+
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:float 8s linear infinite;
+    opacity:.6;
+}
+
+
+@keyframes float{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-110vh);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+.card{
+padding:25px;
+}
+
+h1{
+font-size:40px;
+}
+
+p{
+font-size:17px;
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="heart">❤️</div>
+<div class="heart" style="left:80%;animation-delay:2s">🤍</div>
+<div class="heart" style="left:20%;animation-delay:4s">❤️</div>
+
+
+
+<div class="container">
+
+<div class="card">
+
+
+<div id="intro">
+
+
 <h1>TAAMMUL</h1>
 
-<p style="text-align:center">
-Don't rush...<br>
-Take a few moments to be alone with yourself.<br>
+
+<p style="text-align:center;margin-top:35px">
+
+Don't rush...<br><br>
+
+Take a moment to be alone with yourself.<br>
+
 Calm your breathing.<br>
+
 Collect your thoughts.<br><br>
-Try to read every line not only with your eyes, but with your heart.
+
+Read every line not only with your eyes,<br>
+but with your heart.
+
 </p>
 
-<button onclick="showMeaning()">I am ready</button>
+
+<button onclick="openPage()">
+I am ready
+</button>
+
+
+</div>
+
 
 
 <div id="meaning">
 
+
 <h2>🕊 First of all...</h2>
 
-<p>
-If I have hurt you or made you upset, I sincerely apologize.
-</p>
 
 <p>
-Thank you for coming this far. Maybe right now you are wondering:
+If I have ever hurt you or made you feel bad,
+I sincerely apologize.
+</p>
+
+
+<p>
+Thank you for coming this far.
+Maybe you are wondering:
 <b>"Why all of this?"</b>
 </p>
 
-<p>
-The truth is, I had two ways to start this conversation with you.
-One was with sincerity and kindness. The other was trying to get your attention in any way possible.
-</p>
 
 <p>
-Unfortunately, I chose the second way. But today I understand that attention cannot be forced.
-It can only be earned through respect, sincerity, and patience.
+The truth is, I had two ways to reach you.
+One was with honesty and kindness.
+The other was trying to get your attention in the wrong way.
 </p>
+
 
 <p>
-If what I did hurt you, I have no excuses for it.
-I can only say that I am truly sorry.
+Unfortunately, I chose the second one.
+But now I understand something important:
+attention cannot be forced.
+It is earned through respect, patience and sincerity.
 </p>
+
 
 <p>
-<b>
-Forgiveness is not an obligation. But asking for forgiveness is my responsibility.
-</b>
+If my actions hurt you,
+I have no excuses.
+I can only say:
+I am truly sorry.
 </p>
 
-<h2>📖 Now I have one request from you...</h2>
+
+<p class="quote">
+
+"Forgiveness is not an obligation,
+but asking for forgiveness is my responsibility."
+
+</p>
+
+
+
+<h2>📖 One small request...</h2>
+
 
 <p>
-Please read the book I gave you slowly and carefully.
-I did not choose it randomly.
+Please read the book I gave you slowly.
+I did not choose it by accident.
 </p>
+
 
 <p>
-The lines I marked inside it are not meaningless.
-Sometimes a book can say the words that I could not express.
-Sometimes an author's words can describe the feelings that I could not explain.
+The lines I marked inside it have meaning.
+Sometimes a book can say the words
+that we cannot express ourselves.
 </p>
+
 
 <p>
-So please, don't just read those lines.
+So please don't just read those pages.
+Reflect on them.
 </p>
 
-<h2>Reflect.</h2>
+
+<h2>
+Taammul.
+</h2>
+
 
 <p>
-Maybe those words will tell you what I could not say.
-Maybe you will understand not me, but my silence.
+Maybe those words will tell you
+what I could not say.
+Maybe you will understand
+not only my words,
+but also my silence.
 </p>
 
+
 <p>
-I will be waiting for you to read the marked pages.
+I will be waiting for you
+to read those marked pages.
 </p>
+
 
 <p style="text-align:center">
 Thank you. 🤍
 </p>
 
+
 </div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+function openPage(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("meaning").style.display="block";
+
+window.scrollTo(0,0);
+
+}
+
+
+</script>
+
+
+</body>
+</html>
